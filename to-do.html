@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* background-color: #343a40; */
+            background-color:green;
+            padding: 15px 20px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .search-form {
+            display: flex;
+        }
+
+        .form-control {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .notes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 10px 0;
+            justify-content: center;
+            /* Centers the grid */
+            max-width: 900px;
+            /* Adjust width to ensure balance */
+            margin: 0 auto;
+            /* Centers the container */
+        }
+
+        #addTxt {
+            width: 80%;
+            height: 150px;
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+
+        #addBtn {
+            display: block;
+            margin: 10px auto;
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">NoteNET</a>
+        <form class="search-form">
+            <input class="form-control" id="searchTxt" type="search" placeholder="Search">
+            <button class="btn" type="submit" id="searchBtn">Search</button>
+        </form>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome To NoteNET</h1>
+        <div class="card">
+            <h1 style="background-color: lime; color: black;" ,class="card-title">Add a Note</h1>
+            <h3>Add Note title</h3>
+            <input class="form-control" id="addTitle" type="text">
+            <h3>Add Note Text</h3>
+            <textarea class="form-control" id="addTxt" rows="3"></textarea>
+            <button class="btn" id="addBtn">Add Note</button>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <h1 style="background-color: lime;color: black;">Your Notes</h1>
+        <div id="notes" class="notes-container"></div>
+    </div>
+
+    <script src="js/newapp.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* background-color: #343a40; */
+            background-color:green;
+            padding: 15px 20px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .search-form {
+            display: flex;
+        }
+
+        .form-control {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card {
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .notes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 10px 0;
+            justify-content: center;
+            /* Centers the grid */
+            max-width: 900px;
+            /* Adjust width to ensure balance */
+            margin: 0 auto;
+            /* Centers the container */
+        }
+
+
+
+        #addTxt {
+            width: 80%;
+            height: 150px;
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+
+        #addBtn {
+            display: block;
+            margin: 10px auto;
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">NoteNET</a>
+        <form class="search-form">
+            <input class="form-control" id="searchTxt" type="search" placeholder="Search">
+            <button class="btn" type="submit">Search</button>
+        </form>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome To NoteNET</h1>
+        <div class="card">
+            <h1 style="background-color: lime; color: black;" ,class="card-title">Add a Note</h1>
+            <textarea class="form-control" id="addTxt" rows="3"></textarea>
+            <button class="btn" id="addBtn">Add Note</button>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <h1 style="background-color: lime;color: black;">Your Notes</h1>
+        <div id="notes" class="notes-container"></div>
+    </div>
+
+    <script src="js/apps.js"></script>
+</body>
+
+</html>
